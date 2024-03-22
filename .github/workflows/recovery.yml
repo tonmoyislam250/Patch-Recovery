@@ -8,9 +8,6 @@ on:
         required: true
         default: 'https://transfer.sh/(RECOMMENDED)'
 
-env:
-  RECOVERY_URL: https://oshi.at/Rpjg
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,7 +24,7 @@ jobs:
       run: |
         ls
         pwd
-        wget -O recovery.img ${{github.event.inputs.RECOVERY_URL }}
+        wget -O recovery.img.lz4 ${{github.event.inputs.RECOVERY_URL }}
 
     - name: Patch Process-1
       run: |
